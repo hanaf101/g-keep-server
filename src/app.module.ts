@@ -6,7 +6,8 @@ import { NotesModule } from './notes/notes.module';
 
 @Module({
   imports: [MongooseModule.forRoot('mongodb://localhost/gkeepdb1'),
-    NotesModule],
+    NotesModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

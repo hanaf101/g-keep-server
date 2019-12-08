@@ -8,8 +8,8 @@ import { CreateNoteDto } from './dto/create-note.dto';
 export class NotesService {
   constructor(@InjectModel('Note') private readonly noteModel: Model<Note>) {}
 
-  async create(createCatDto: CreateNoteDto): Promise<Note> {
-    const createdNote = new this.noteModel(CreateNoteDto);
+  async create(createNoteDto: CreateNoteDto): Promise<Note> {
+    const createdNote = new this.noteModel(createNoteDto);
     return await createdNote.save();
   }
 
