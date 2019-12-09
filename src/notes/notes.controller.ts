@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller, Get, Post, Put ,Body } from '@nestjs/common';
 import { CreateNoteDto } from './dto/create-note.dto';
 import { NotesService } from './notes.service';
 import { Note } from './interfaces/note.interface';
@@ -10,6 +10,11 @@ export class NotesController {
   @Post()
   async create(@Body() createNoteDto: CreateNoteDto) {
     await this.notesService.create(createNoteDto);
+  }
+
+  @Put()
+  async update(@Body() createNoteDto: CreateNoteDto) {
+    await this.notesService.update(createNoteDto);
   }
 
   @Get()

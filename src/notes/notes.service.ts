@@ -16,4 +16,9 @@ export class NotesService {
   async findAll(): Promise<Note[]> {
     return await this.noteModel.find().exec();
   }
+
+  async update(createNoteDto: CreateNoteDto): Promise<Note> {
+    const updatedNote = new this.noteModel(createNoteDto);
+    return await updatedNote.update();
+  }
 }
